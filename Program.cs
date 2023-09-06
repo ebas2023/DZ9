@@ -1,15 +1,18 @@
-﻿/*Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
-N = 5 -> "5, 4, 3, 2, 1"
-N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"*/
+﻿/*Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+M = 1; N = 15 -> 120
+M = 4; N = 8. -> 30*/
 
 Console.WriteLine ("Введите число N:");
-int Z =int.Parse (Console.ReadLine ()!);
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine ("Введите число M:");
+int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine ($"{Natur(Z,1)}");
+Console.WriteLine ($"Сумма равна={Natur(m,n)}");
 
-string Natur(int N,int K)
+int Natur(int m,int n)
 {
-    if(N==K) return K.ToString();
-    return (N+","+ Natur(N-1,K));
-   
+    if(m==n) return m;
+    return Natur(m+1,n)+m; 
 }
+
+
